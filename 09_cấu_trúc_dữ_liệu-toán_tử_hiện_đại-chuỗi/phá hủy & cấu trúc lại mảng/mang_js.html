@@ -42,50 +42,112 @@
                     `order recevied ! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
                 );
             },
+            /////
+            oderpasta : function(img1, img2, img3){
+                console.log(`here is yours declicious pasta with ${img1} , ${img2} and ${img3}`);
+            }
+
         };
+/////////////////////////////////////////////////////////////////////////////
+//  TOÁN TỬ TRẢI RỘNG-105
+        const arr = [7 ,8 ,9];
+        const batNewarr = [1 ,2 , arr[0] , arr[1] , arr[3]];
+        console.log(batNewarr);
+
+        const newArr = [1,2, ...arr];
+        console.log(newArr);
+
+        console.log(...newArr);
+        console.log(1,2,7,8,9);
+
+        const newMenu = [...restaurant.mainMenu , 'Gnocci'];
+        console.log(newMenu);
+
+        // mảng sao chép
+        const mainMenucopy = [...restaurant.mainMenu];
+
+        //  nối 2 mảng
+        const menu = [...restaurant.starterMenu , ...restaurant.mainMenu];
+        console.log(menu);
+
+        // lặp lại : mảng , chuỗi , bản đồ , tập hợp nhưng ko phải đối tượng
+        const str = 'jonas';
+        const letters = [...str , '' , 's.'];
+        console.log(letters)
+        console.log(str);
+
+        //
+        const ingredients = [
+            prompt("let 's  make pasta ! ingredient 1? "),
+            prompt('ingredient 2?'),
+            prompt('ingredient 3?'),
+        ];
+        console.log(ingredients);
+
+        restaurant.oderpasta(ingredients[0] , ingredients[1] , ingredients[2]);
+        restaurant.oderpasta(...ingredients);
+
+        // đối tượng
+        const newRestaurant = {foundedIn : 2003 , ...restaurant , founder : 'niên'};
+        console.log(newRestaurant);
+
+        const restaurantcopy = {...restaurant};
+        restaurantcopy.name = 'Ristorante Roma';
+        console.log(restaurantcopy.name)
+        console.log(restaurant.name);
+
+        
 
 
-        //////////////////////////////////////////////////////////////////////////////
-        //  PHÁ HỦY ĐỐI TƯỢNG-104
-        restaurant.oderDelivery({
-            time : '22.30',
-            address :'via del sole , 21',
-            mainIndex : 2,
-            starterIndex : 2 ,
-        });
-
-        restaurant.oderDelivery({
-            address :'via del sole , 21',
-            starterIndex : 1 ,
-        })
-
-        const { name, openingHours, categories } = restaurant;
-        console.log(name, openingHours, categories);
-
-        const {
-            name : restaurantName,
-            openingHours : hours,
-            categories : tags,
-        } = restaurant;
-        console.log(restaurantName , hours , tags);
-
-        // các giá trị mặc định
-        const {menu = [] , starterMenu : starter = []} = restaurant;
-        console.log(menu,starter);
+        
 
 
-        // các biến đột biến\
-        let a = 111;
-        let b = 999;
-        const obj = {a : 23 , b : 7 , c : 14};
-        ({a,b} = obj);
-        console.log(a,b);
 
-        // các đối tượng lồng nhau
-        const {
-            fri :{open : o , close : c} ,
-        } = openingHours;
-        console.log(o,c);
+//////////////////////////////////////////////////////////////////////////////
+//  PHÁ HỦY ĐỐI TƯỢNG-104
+        // restaurant.oderDelivery({
+        //     time : '22.30',
+        //     address :'via del sole , 21',
+        //     mainIndex : 2,
+        //     starterIndex : 2 ,
+        // });
+
+        // restaurant.oderDelivery({
+        //     address :'via del sole , 21',
+        //     starterIndex : 1 ,
+        // })
+
+        // const { name, openingHours, categories } = restaurant;
+        // console.log(name, openingHours, categories);
+
+        // const {
+        //     name : restaurantName,
+        //     openingHours : hours,
+        //     categories : tags,
+        // } = restaurant;
+        // console.log(restaurantName , hours , tags);
+
+        // // các giá trị mặc định
+        // const {menu = [] , starterMenu : starter = []} = restaurant;
+        // console.log(menu,starter);
+
+
+        // // các biến đột biến\
+        // let a = 111;
+        // let b = 999;
+        // const obj = {a : 23 , b : 7 , c : 14};
+        // ({a,b} = obj);
+        // console.log(a,b);
+
+        // // các đối tượng lồng nhau
+        // const {
+        //     fri :{open : o , close : c} ,
+        // } = openingHours;
+        // console.log(o,c);
+
+
+
+
 
 
 
