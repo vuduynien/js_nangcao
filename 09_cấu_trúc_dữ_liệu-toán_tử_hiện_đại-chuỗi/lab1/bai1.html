@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var football = {
+        team1: 'Viet Nam',
+        team1: 'Barcelona',
+        players: [
+            [
+                'Van hau',
+                'Cong Phuong',
+                'Quang Hai',
+                'Cong Vinh',
+                'Van Quyet',
+                'Van Thanh',
+                'Van Toan',
+                'Van Lam',
+                'hoang duc',
+                'philip nguyen',
+                'Tien Linh',
+            ],
+            [
+                'Messi',
+                'Neymar',
+                'marcherano',
+                'inesta',
+                'ronaldinho',
+                'kualavet',
+                'pique',
+                'xavi',
+                'dejong',
+                'peter',
+                'suares'
+            ],
+        ],
+        score: '4:0',
+        scored: ['Messi', 'suares', 'Neymar','ronaldinho'],
+        date: 'Nov 9th, 2037',
+            odds:{
+                team1: 6.5,
+                x:3.25,
+                team2: 1.5,
+            },
+        }
+
+        const [players1, players2]=football.players;
+        console.log(players1,players2)
+
+        const [gk,...fieldPlayers] =players1
+        console.log(gk, fieldPlayers)
+
+        const allPlayers =[...players1,...players2]
+        console.log(allPlayers)
+
+        const PlayersFinal=[...players1,'Duy Nien','Duy Nam', 'Duy nhat'];
+        
+        const {
+            odds:{ team1, x , team2}
+        } = football
+        console.log( team1,x,team2)
+
+        const prinGoals =function(...players){
+            console.log(`${players.length} ban duoc ghi`)
+            console.log(players);
+        }
+        prinGoals(...football.scored);
+
+        team1 > team2 && console.log('Team 2 gianh chien thang')
+    </script>
+</body>
+</html>

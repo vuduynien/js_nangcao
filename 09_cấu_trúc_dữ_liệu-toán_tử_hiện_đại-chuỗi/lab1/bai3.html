@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const gameEvents = new Map([
+            [17, 'Goal'],
+            [36, 'Thay nguoi'],
+            [47, 'Goal'],
+            [61, 'Thay nguoi'],
+            [64, 'Yellow card']
+            [69, 'Red card'],
+            [70, 'Thay nguoi'],
+            [72, 'Thay nguoi'],
+            [76, 'Goal'],
+            [80, 'Goal'],
+            [92, 'Yellow card']
+        ]);
+        const events =[...new Set(gameEvents.values())]
+        console.log(events)
+    </script>
+</head>
+<body>
+</body>
+</html>

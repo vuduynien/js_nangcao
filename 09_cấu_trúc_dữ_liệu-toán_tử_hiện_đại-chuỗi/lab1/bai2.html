@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var football = {
+        team1: 'Viet Nam',
+        team1: 'Barcelona',
+        players: [
+            [
+                'Van hau',
+                'Cong Phuong',
+                'Quang Hai',
+                'Cong Vinh',
+                'Van Quyet',
+                'Van Thanh',
+                'Van Toan',
+                'Van Lam',
+                'hoang duc',
+                'philip nguyen',
+                'Tien Linh',
+            ],
+            [
+                'Messi',
+                'Neymar',
+                'marcherano',
+                'inesta',
+                'ronaldinho',
+                'kualavet',
+                'pique',
+                'xavi',
+                'dejong',
+                'peter',
+                'suares'
+            ],
+        ],
+        score: '4:0',
+        scored: ['Messi', 'suares', 'Neymar','ronaldinho'],
+        date: 'Nov 9th, 2037',
+        odds:{
+            team1: 1.5,
+            x:3.5,
+            team2: 8.5,
+        },
+    };
+
+    for (const[i,player] of football.scored.entries())
+        console.log(`Goal ${i + 1}: ${player}`);
+
+        const odds=Object.values(football.odds)
+        let average =0;
+        for(const odd  of odds)
+            average += odd;
+            average /= odds.length;
+            console.log(average)
+            
+    for(const [team,odd] of Object.entries(football.odds)){
+        const teamStr = team === 'x' ? 'draw' : `Victory ${football[team]}` ;
+        console.log(`Odd of ${teamStr} ${odd}`);
+    }
+</script>
+<body>
+
+</body>
+</html>

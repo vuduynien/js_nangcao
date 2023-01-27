@@ -45,56 +45,96 @@
             /////
             oderpasta : function(img1, img2, img3){
                 console.log(`here is yours declicious pasta with ${img1} , ${img2} and ${img3}`);
-            }
+            },
+
+            orderPizza : function (mainingredient, ...otheringredients){
+                console.log(mainingredient);
+                console.log(otheringredients);
+            },
 
         };
 /////////////////////////////////////////////////////////////////////////////
+//  MẪU CÒN LẠI VÀ CÁC THÔNG SỐ-106
+        //  1-cấu trúc lại
+// trải rộng , bởi vì ở bên phải của toán tử gán
+        const arr = [1 , 2 , ...[3 ,4 ]];
+
+//  xem kết quả vì ở bên trái của dâú bằng 
+        const [a,b,...others] = [1,2,3,4,5];
+        console.log(a, b ,others);
+
+        const [pizza ,  , risotto , ...otherFood] = [...restaurant.mainMenu , ...restaurant.starterMenu];
+        console.log(pizza , risotto . otherFood);
+
+// đối tượng
+        const {sat , ...weekdays} = restaurant.openingHours;
+        console.log(weekdays);
+        // 2-các chức năng cơ bản
+        const add = function(...numbers) {
+            let sum = 0;
+            for (let i = 0; i < numbers.length; i++) 
+               sum += numbers[i];
+               console.log(sum);         
+        };
+        add(2,3);
+        add(5,3,7,2);
+        add(8,2,5,3,2,4,1);
+
+        const x = [23,5,7];
+        add(...x);
+
+        restaurant.orderPizza('mushrooms' , 'onion' , 'olivers' , 'spinach');
+        restaurant.orderPizza('mushrooms');
+
+
+
+/////////////////////////////////////////////////////////////////////////////
 //  TOÁN TỬ TRẢI RỘNG-105
-        const arr = [7 ,8 ,9];
-        const batNewarr = [1 ,2 , arr[0] , arr[1] , arr[3]];
-        console.log(batNewarr);
+        // const arr = [7 ,8 ,9];
+        // const batNewarr = [1 ,2 , arr[0] , arr[1] , arr[3]];
+        // console.log(batNewarr);
 
-        const newArr = [1,2, ...arr];
-        console.log(newArr);
+        // const newArr = [1,2, ...arr];
+        // console.log(newArr);
 
-        console.log(...newArr);
-        console.log(1,2,7,8,9);
+        // console.log(...newArr);
+        // console.log(1,2,7,8,9);
 
-        const newMenu = [...restaurant.mainMenu , 'Gnocci'];
-        console.log(newMenu);
+        // const newMenu = [...restaurant.mainMenu , 'Gnocci'];
+        // console.log(newMenu);
 
-        // mảng sao chép
-        const mainMenucopy = [...restaurant.mainMenu];
+        // // mảng sao chép
+        // const mainMenucopy = [...restaurant.mainMenu];
 
-        //  nối 2 mảng
-        const menu = [...restaurant.starterMenu , ...restaurant.mainMenu];
-        console.log(menu);
+        // //  nối 2 mảng
+        // const menu = [...restaurant.starterMenu , ...restaurant.mainMenu];
+        // console.log(menu);
 
-        // lặp lại : mảng , chuỗi , bản đồ , tập hợp nhưng ko phải đối tượng
-        const str = 'jonas';
-        const letters = [...str , '' , 's.'];
-        console.log(letters)
-        console.log(str);
+        // // lặp lại : mảng , chuỗi , bản đồ , tập hợp nhưng ko phải đối tượng
+        // const str = 'jonas';
+        // const letters = [...str , '' , 's.'];
+        // console.log(letters)
+        // console.log(str);
 
-        //
-        const ingredients = [
-            prompt("let 's  make pasta ! ingredient 1? "),
-            prompt('ingredient 2?'),
-            prompt('ingredient 3?'),
-        ];
-        console.log(ingredients);
+        // //
+        // const ingredients = [
+        //     prompt("let 's  make pasta ! ingredient 1? "),
+        //     prompt('ingredient 2?'),
+        //     prompt('ingredient 3?'),
+        // ];
+        // console.log(ingredients);
 
-        restaurant.oderpasta(ingredients[0] , ingredients[1] , ingredients[2]);
-        restaurant.oderpasta(...ingredients);
+        // restaurant.oderpasta(ingredients[0] , ingredients[1] , ingredients[2]);
+        // restaurant.oderpasta(...ingredients);
 
-        // đối tượng
-        const newRestaurant = {foundedIn : 2003 , ...restaurant , founder : 'niên'};
-        console.log(newRestaurant);
+        // // đối tượng
+        // const newRestaurant = {foundedIn : 2003 , ...restaurant , founder : 'niên'};
+        // console.log(newRestaurant);
 
-        const restaurantcopy = {...restaurant};
-        restaurantcopy.name = 'Ristorante Roma';
-        console.log(restaurantcopy.name)
-        console.log(restaurant.name);
+        // const restaurantcopy = {...restaurant};
+        // restaurantcopy.name = 'Ristorante Roma';
+        // console.log(restaurantcopy.name)
+        // console.log(restaurant.name);
 
         
 
